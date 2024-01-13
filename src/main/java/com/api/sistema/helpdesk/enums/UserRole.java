@@ -3,7 +3,7 @@ package com.api.sistema.helpdesk.enums;
 public enum UserRole {
     ADMIN("admin"),
     USER("user");
-
+   
     private String role;
     
   
