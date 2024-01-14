@@ -5,5 +5,5 @@ RUN mvn clean package -X -DskipTests
 
 FROM openjdk:17-ea-10-jdk-slim
 WORKDIR /app
-COPY --from=build /target/*.jar ./appapi.jar
-ENTRYPOINT java -jar appapi.jar
+COPY --from=build ./app/target/*.jar ./app.jar
+ENTRYPOINT java -jar app.jar
