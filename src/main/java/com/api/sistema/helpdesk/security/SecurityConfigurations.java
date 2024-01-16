@@ -38,7 +38,7 @@ public class SecurityConfigurations {
                                     .requestMatchers(HttpMethod.DELETE,"/api/v1/ticket/**").hasRole("ADMIN")
                                     .requestMatchers(HttpMethod.POST,"/api/v1/auth/login").permitAll()                                    
                                     .requestMatchers(HttpMethod.POST,"/api/v1/auth/register").permitAll()
-                                     .requestMatchers("/h2-database/**").permitAll()
+                                    
                                      .requestMatchers("/error**").anonymous()
                                     .anyRequest().authenticated())
                  .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)                  
