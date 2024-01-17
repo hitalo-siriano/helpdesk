@@ -87,7 +87,7 @@ PUT : /api/v1/ticket/{id}
 Rotas de ADMIN
 info:  "message" e comentario do tecnico 
 
-Retorna todos chamdos existente no sistema , essa rota e somente para tecnicos 
+Retorna todos chamados existente no sistema , essa rota e somente para tecnicos 
 
 ````
 GET: /api/v1/ticket/all/{id}
