@@ -26,6 +26,8 @@ Cadastra usuario , atenção definir role (USER ou ADMIN) , se for tenico import
 essa rega na consulta. 
 
 Post: /api/v1/auth/register
+
+````
 {
       "name" : "teste",
       "Job" : "Support Help Desk",
@@ -36,8 +38,12 @@ Post: /api/v1/auth/register
       "role" : "ADMIN"
 }
 
+````
 Cadasta um novo chamado(ticket) , no userId passa o uuid que pegou no login.Atento aos tamanhos do caracteres possivel retorno de erro.
+
 Post: /api/v1/ticket
+
+````
 {
    "userId":"2fc06998-04e2-4a12-8602-9bc4cd263d8c", 
    "title":"Wifi nao funciana",
@@ -47,31 +53,51 @@ Post: /api/v1/ticket
 
 }
 
+````
 Retorna todos os meus chamados.
+
+````
 GET: /api/v1/ticket/{uuid}
 
+````
 Retona todos meus chamado fechados
+
+````
 GET:/api/v1/ticket/close/{id}
 
+````
 Retorna todos meus chamado abertos
+
+````
 GET: /api/v1/ticket/open/{id}
 
+````
 Atualizar informação do chamado
+
 PUT : /api/v1/ticket/{id}
+
+````
 {
     "ticketId":"",
     "title":"",
     ""
 }
 
+````
 Rotas de ADMIN
 info:  "message" e comentario do tecnico 
 
 Retorna todos chamdos existente no sistema , essa rota e somente para tecnicos 
+
+````
 GET: /api/v1/ticket/all/{id}
 
+````
 Fecha chamado
+
 PUT : /v1/ticket/update/status/closed/{id}
+
+````
 {
     "ticketId":"",
   "title":"",
@@ -81,23 +107,35 @@ PUT : /v1/ticket/update/status/closed/{id}
 
 }
 
+````
 Reabrir chamado 
+
 PUT: /api/v1/ticket/update/status/open/{id}
 
+````
 {
     "ticketId":"",
     "message":""
 }
+
+````
 Deleta chamado
+
+````
 DELETE: /api/v1/ticket/{id-user}/delete/{idTicket}
 
+````
 Atender chamado
+
 PUT: /api/v1/ticket/update/status/atende/{id}
+
+````
 {
     "ticketId":"",
     "message":""
 }
 
+````
 
 
 ## 🛠️ Construído com
