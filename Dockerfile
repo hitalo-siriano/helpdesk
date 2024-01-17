@@ -1,18 +1,15 @@
 
 
+FROM openjdk:17-jdk-slim AS build
 
-#
-# Build stage
-#
-FROM maven:3.8.2-jdk-17 AS build
-COPY . .
-RUN mvn clean package -DskipTests
+COPY pom.xml mvnw ./
+COPY .mvn .mvn
+RUN ./mvnw dependency:resolve
 
-#
-# Package stage
-#
+COPY src src
+RUN ./mvnw package
+
 FROM openjdk:17-jdk-slim
-COPY --from=build /target/helpdesk-0.0.1-SNAPSHOT.jar appapi.jar
-# ENV PORT=8080
-EXPOSE 8080
-ENTRYPOINT ["java","-jar","appapi.jar"]
+WORKDIR demo
+COPY --from=build target/*.jar app.jar
+ENTRYPOINT ["java", "-jar", "app.jar"]
