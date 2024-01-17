@@ -142,8 +142,8 @@ PUT: /api/v1/ticket/update/status/atende/{id}
 
 Mencione as ferramentas que você usou para criar seu projeto
 
-* [Spring Boot]([http://www.dropwizard.io/1.0.2/docs/](https://spring.io/projects/spring-boot/) - Usado para gera as rotas 
-* [Spring Security](https://spring.io/projects/spring-security/)) - Usados para autenticar e definir os nivel de acesso
+* [Spring Boot](https://spring.io/projects/spring-boot/) - Usado para gera as rotas 
+* [Spring Security](https://spring.io/projects/spring-security/) - Usados para autenticar e definir os nivel de acesso
 * [JWT](https://rometools.github.io/rome/) - Usada para gera os tokes de acesso
 * [JPA](https://hibernate.org/orm/) - Usada para fazer as consultas no banco de dados.
 
