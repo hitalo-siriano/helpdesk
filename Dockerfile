@@ -1,16 +1,18 @@
-FROM ubuntu:latest AS build
 
-RUN apt-get update
-RUN apt-get install openjdk-17-jdk -y
+
+
+#
+# Build stage
+#
+FROM maven:3.8.2-jdk-17 AS build
 COPY . .
+RUN mvn clean package -DskipTests
 
-RUN apt-get install maven -y
-RUN mvn clean install 
-
+#
+# Package stage
+#
 FROM openjdk:17-jdk-slim
-
+COPY --from=build /target/helpdesk-0.0.1-SNAPSHOT.jar appapi.jar
+# ENV PORT=8080
 EXPOSE 8080
-
-COPY --from=build /target/helpdesk-0.0.1-SNAPSHOT.jar app.jar
-
-ENTRYPOINT [ "java", "-jar", "app.jar" ]
+ENTRYPOINT ["java","-jar","appapi.jar"]
