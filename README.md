@@ -11,7 +11,7 @@ link: https://api-helpdesk-ll7g.onrender.com/{rotas}
 ## ⚙️ Rotas
 
 fazer o login
-Post: /api/v1/auth/login
+POST: /api/v1/auth/login
 
 ````
 
@@ -25,7 +25,7 @@ Post: /api/v1/auth/login
 Cadastra usuario , atenção definir role (USER ou ADMIN) , se for tenico importante cadastra com job "Support Help" para sastifazer a regra na consulta , optei do definir essa 
 essa rega na consulta. 
 
-Post: /api/v1/auth/register
+POST: /api/v1/auth/register
 
 ````
 {
@@ -41,7 +41,7 @@ Post: /api/v1/auth/register
 ````
 Cadasta um novo chamado(ticket) , no userId passa o uuid que pegou no login.Atento aos tamanhos do caracteres possivel retorno de erro.
 
-Post: /api/v1/ticket
+POST: /api/v1/ticket
 
 ````
 {
@@ -78,9 +78,11 @@ PUT : /api/v1/ticket/{id}
 
 ````
 {
-    "ticketId":"",
-    "title":"",
-    ""
+   "ticketId":"2fc06998-04e2-4a12-8602-9bc4cd263d8c", 
+   "title":"Wifi nao funciana",
+   "description":"sem rede nao navega na rede bloquedo",
+   "local":"Finance Department" ,
+   "contact":"3456" 
 }
 
 ````
@@ -99,11 +101,8 @@ PUT : /v1/ticket/update/status/closed/{id}
 
 ````
 {
-    "ticketId":"",
-  "title":"",
-   "description":"",
-   "local":"" ,
-   "contact":"" 
+   "ticketId":"",
+    "message":""
 
 }
 
@@ -135,6 +134,11 @@ PUT: /api/v1/ticket/update/status/atende/{id}
     "message":""
 }
 
+````
+
+Todo os chamados que o tecnico esta vinculado. 
+````
+GET: /api/v1/ticket/all/technician/{id-user}
 ````
 
 
