@@ -6,11 +6,17 @@ do ecossitema java e spring .
 
 ## Demostração
 
-link: https://api-helpdesk-ll7g.onrender.com/{rotas}
+link: https://api-helpdesk.hitalosirianodev.com.br/{rotas}
 
 ## ⚙️ Rotas
+Todas rotas precisa Authorization: Bearer <token> para autenticar, somente o Cadastra usuario não precisa, porque e liberado para cria quaquer user e 
+utilizar o sistema apenas ccomo demosntração.
 
 fazer o login
+se tiver user na base de dados pode realizar o login.
+Se não tiver regitra um.
+
+
 POST: /api/v1/auth/login
 
 ````
