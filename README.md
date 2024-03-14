@@ -22,9 +22,9 @@ POST: /api/v1/auth/login
 ````
 
 
-Cadastra usuario , atenção definir role (USER ou ADMIN) , se for tenico importante cadastra com job "Support Help" para sastifazer a regra na consulta , optei do definir essa 
+Cadastra usuario , atenção definir role (USER ou ADMIN) , se for tenico importante cadastra com job "Support Help Desk" para sastifazer a regra na consulta , optei do definir essa 
 essa rega na consulta. 
-
+Essa rota esta livre para qualquer user,apenas uso de demontração.
 POST: /api/v1/auth/register
 
 ````
