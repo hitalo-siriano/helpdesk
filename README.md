@@ -4,9 +4,7 @@ Um simples crud para gerencia uma rotina de chamados , foi desenvolvido para aux
 do ecossitema java e spring . 
 
 
-## Demostração
 
-link: https://api-helpdesk.hitalosirianodev.com.br/{rotas}
 
 ## ⚙️ Rotas
 Todas rotas precisa Authorization: Bearer <token> para autenticar, somente o Cadastra usuario não precisa, porque e liberado para cria quaquer user e 
